@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 mx-auto mt-5">
+      <h2>商品一覧</h2>
+      <%=link_to "新商品登録",new_admin_product_path %>
+      <table class ="table">
+        <thead>
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>税抜き価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </thead>
+        <% @products.each do|product| %>
+        <td><%=product.product_name %></td>
+        <% end %>
+        
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>新商品</h1>
+      <%= form_with model: @product,url: admin_session_path,method: :post do |f| %>
+      <%=f.text_field :product_name %><br>
+      <%=f.text_area :product_introduction%><br>
+      <%=f.text_field :product_price %>
+      <%=f.submit "送信",class: "btn btn-success" %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
