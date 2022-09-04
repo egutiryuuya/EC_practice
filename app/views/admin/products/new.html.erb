@@ -1,13 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h1>新商品</h1>
-      <%= form_with model: @product,url: admin_session_path,method: :post do |f| %>
-      <%=f.text_field :product_name %><br>
-      <%=f.text_area :product_introduction%><br>
-      <%=f.text_field :product_price %>
-      <%=f.submit "送信",class: "btn btn-success" %>
-      <% end %>
+      <h1>新規商品登録</h1>
+      <%= form_with model: @product,url: admin_products_path,method: :post do |f| %>
+        <div class ="form_group">
+          <label>商品画像</label>
+          <%=f.file_field :product_image, accept: "image/*" %>
+        </div>
+        <div class ="form_group">
+          <label>商品名</label>
+          <%=f.text_field :product_name %><br>
+        </div>
+        <div class ="form_group">
+          <label>商品説明</label>
+          <%=f.text_area :product_introduction%><br>
+        </div>
+        <div class ="form_group">
+          <label>税抜き価格</label>
+          <%=f.text_field :product_price %><br>
+        </div>
+        <div form_group>
+          <%=f.submit "新規登録",class: "btn btn-warning mx-auto mt-3" %>
+          <% end %>
+        </div>
+        
       
     </div>
   </div>
