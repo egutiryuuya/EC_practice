@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <%=@product.get_product_image,size:"200*200" %>
+      <%=image_tag @product.get_product_image%>
       
     </div>
     <div class="col-md-8 offset-md-1">
@@ -10,13 +10,18 @@
         <td>商品名</td><td><%=@product.product_name %></td>
       </tr>
       <tr>
-        <td>商品説明</td><td><%=@poduct.product_introduction %></td>
-      </tr>
+        <td>商品説明</td><td><%= @product.product_introduction %></td>
+      </tr>                             
       <tr>
         <td>ジャンル</td><td></td>
       </tr>
       <tr>
-        <td>税込み価格<br>(税抜き価格)</td><td><%=@product.product_price %></td>
+        <td>税込み価格<br>(税抜き価格)</td><td><%=@product.product_price.to_s(:delimited) %>(<%=@product.add_tax_sales_price.to_s(:delimited) %>)円</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+        <%= link_to "編集する",edit_admin_product_path(@product),class: "btn btn-success" %>
+        </td>
       </tr>
       </table>
     </div>
