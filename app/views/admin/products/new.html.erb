@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-8">
       <h1>新規商品登録</h1>
-      <%= form_with model: @product,url: admin_products_path,method: :post do |f| %>
-        <div class ="form_group">
+      <%= form_with model: @product,url:admin_products_path, local:true do |f| %>
+        <div class ="form_group">        
           <label>商品画像</label>
           <%=f.file_field :product_image, accept: "image/*" %>
         </div>
